@@ -1,5 +1,5 @@
-#include "formula.h"
 #include "printing.h"
+
 int main() {
     printing prt;
     int var = 0;
