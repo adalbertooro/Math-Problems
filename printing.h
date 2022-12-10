@@ -3,10 +3,16 @@
 
 #include "formula.h"
 
+#include <iostream>
+
 class printing {
     public:
         void print();
         void find(int);
+        void printAdd(double, double, double);
+        void printSubtract(double, double, double);
+        void printMultiply(double, double, double);
+        void printDivide(double, double, double);
     private:
 
 };
@@ -23,51 +29,49 @@ void printing::print() {
 
 void printing::find(int var) {
     formula frm;
-    int total = 0;
+    printing prt;
+    std::cout.precision(5);
+    double total = 0.0;
     if(var == 1) {
-        int a = 0;
-        int b = 0;
+        double a = 0;
+        double b = 0;
         std::cout << "\npick two numbers to add together.\n";
         std::cout << "First Number: ";
         std::cin >> a;
         std::cout << "Second Number: ";
         std::cin >> b;
         total = frm.add(a, b);
-        std::cout << "The sum of the " << a << " + " << b << " = " << total; 
-        std::cout << "\n";
+        prt.printAdd(a, b, total);
     } else if(var == 2) {
-        int a = 0;
-        int b = 0;
+        double a = 0;
+        double b = 0;
         std::cout << "\npick two numbers to subtract together.\n";
         std::cout << "First Number: ";
         std::cin >> a;
         std::cout << "Second Number: ";
         std::cin >> b;
         total = frm.subtract(a, b);
-        std::cout << "The sum of the " << a << " - " << b << " = " << total; 
-        std::cout << "\n";
+        prt.printSubtract(a, b, total);
     } else if(var == 3) {
-        int a = 0;
-        int b = 0;
+        double a = 0;
+        double b = 0;
         std::cout << "\npick two numbers to multiply together.\n";
         std::cout << "First Number: ";
         std::cin >> a;
         std::cout << "Second Number: ";
         std::cin >> b;
         total = frm.multiply(a, b);
-        std::cout << "The sum of the " << a << " * " << b << " = " << total; 
-        std::cout << "\n";
+        prt.printMultiply(a, b, total);
     } else if(var == 4) {
-        int a = 0;
-        int b = 0;
+        double a = 0;
+        double b = 0;
         std::cout << "\npick two numbers to divide together.\n";
         std::cout << "First Number: ";
         std::cin >> a;
         std::cout << "Second Number: ";
         std::cin >> b;
         total = frm.divide(a, b);
-        std::cout << "The sum of the " << a << " / " << b << " = " << total; 
-        std::cout << "\n";
+        prt.printDivide(a, b, total);
     } else if(var == 5) {
         int x = 0;
         std::cout << "\nPick a number for the Coolatz Conjecture.\n";
@@ -76,6 +80,26 @@ void printing::find(int var) {
         total = frm.collatzConjecture(x);
         std::cout << total << '\n';
     }
+}
+
+void printing::printAdd(double a, double b, double total) {
+    std::cout << total << " = " << a << " + " << b; 
+    std::cout << "\n";
+}
+
+void printing::printSubtract(double a, double b, double total) {
+    std::cout << total << " = " << a << " - " << b; 
+    std::cout << "\n";
+}
+
+void printing::printMultiply(double a, double b, double total) {
+    std::cout << total << " = " << a << " * " << b; 
+    std::cout << "\n";
+}
+
+void printing::printDivide(double a, double b, double total) {
+    std::cout << total << " = " << a << " / " << b; 
+    std::cout << "\n";
 }
 
 #endif
