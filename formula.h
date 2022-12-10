@@ -1,28 +1,21 @@
 #ifndef FORMULA_H
 #define FORMULA_H
 
+
 #include <iostream>
 class formula {
 public:
-    void print();
     void find(int);
+
     int add(int, int);
     int subtract(int, int);
     int multiply(int, int);
     int divide(int, int);
+    int collatzConjecture(int);
+
 private:
 
 };
-
-
-void formula::print() {
-    std::cout << "Enter the number of what equation you would like to use.\n\n";
-    std::cout << "1. Add.\n";
-    std::cout << "2. subtract.\n";
-    std::cout << "3. Multiply.\n";
-    std::cout << "4. divide.\n";
-    std::cout << "\n";
-}
 
 void formula::find(int var) {
     formula frm;
@@ -71,6 +64,13 @@ void formula::find(int var) {
         total = frm.divide(a, b);
         std::cout << "The sum of the " << a << " / " << b << " = " << total; 
         std::cout << "\n";
+    } else if(var == 5) {
+        int x = 0;
+        std::cout << "\nPick a number for the Coolatz Conjecture.\n";
+        std::cout << "Number: ";
+        std::cin >> x;
+        total = frm.collatzConjecture(x);
+        std::cout << total << '\n';
     }
 }
 
@@ -91,6 +91,18 @@ int formula::multiply(int a, int b) {
 
 int formula::divide(int a, int b) {
     int sum = a / b;
+    return sum;
+}
+int formula::collatzConjecture(int x) {
+    formula frm;
+    int sum = 0;
+
+    if(x % 2 == 0) {
+        std::cout << "Even\n";
+    } else {
+        sum = frm.multiply(x, 3);
+        sum = frm.add(sum, 1);
+    }
     return sum;
 }
 
