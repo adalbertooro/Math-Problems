@@ -1,13 +1,14 @@
 #include "formula.h"
-
+#include "printing.h"
 int main() {
-    formula frm;
+    printing prt;
     int var = 0;
-    frm.print();
+    prt.print();
 
+    std::cout << "Pick a Formula: ";
     std::cin >> var;
     
-    frm.find(var);
+    prt.find(var);
     
     return 0;
 }
