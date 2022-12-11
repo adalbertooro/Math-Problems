@@ -20,6 +20,7 @@ class printing {
 
 void printing::print() {
     std::cout << "Enter the number of what equation you would like to use.\n\n";
+    std::cout << "0. To stop.\n";
     std::cout << "1. Add.\n";
     std::cout << "2. subtract.\n";
     std::cout << "3. Multiply.\n";
