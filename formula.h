@@ -2,15 +2,18 @@
 #define FORMULA_H
 
 #include <iostream>
+#include <vector>
 
 class formula {
     public:
+        std::vector<int> hold;
+
         double add(double, double);
         double subtract(double, double);
         double multiply(double, double);
         double divide(double, double);
-        int collatzConjecture(int);
-
+        
+        std::vector<int> collatzConjecture(int);
     private:
 };
 
@@ -33,22 +36,22 @@ double formula::divide(double a, double b) {
     double sum = a / b;
     return sum;
 }
-int formula::collatzConjecture(int x) {
+
+std::vector<int> formula::collatzConjecture(int x) {
     formula frm;
     int total = x;
-    int sum = 0;
     while(total != 1) {
         if(total % 2 == 0) {
-            sum = total;
+            hold.push_back(total);
             total = frm.divide(total, 2);
-            std::cout << total <<"\n";
         } else {
+            hold.push_back(total);
             total = frm.multiply(total, 3);
             total = frm.add(total, 1);
-            std::cout << total <<"\n";
         }
     }
-    return sum;
+    hold.push_back(total);
+    return hold;
 }
 
 #endif
