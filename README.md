@@ -1,4 +1,4 @@
-<H1>Math is fun!<H1>
+<H1>Math is fun!</H1>
 This project will be set up much like a searching system.
 What it will search through are an accumulation of mathematical formula,
 You will be given the option to pick a math equation and see it worked
